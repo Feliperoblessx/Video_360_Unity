@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - PlayerInteractionZone
+  - PlayAudio
   layers:
   - Default
   - TransparentFX

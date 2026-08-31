@@ -45,6 +45,14 @@ public class AudioManager : MonoBehaviour, IaudioManager
         Play(sound, position, true);
     }
 
+    public void StopAudio(string soundID)
+    {
+        if (!soundDictionary.TryGetValue(soundID, out var sound))
+            return;
+
+        Stop(soundID);
+    }
+
     private void Play(SoundData sound, Vector3 position, bool is3D)
     {
         GameObject go = new GameObject("Audio_" + sound.id);
@@ -61,10 +69,17 @@ public class AudioManager : MonoBehaviour, IaudioManager
         if (!sound.loop)
             Destroy(go, sound.clip.length);
     }
+    private void Stop(string id)
+    {
+        GameObject go = GameObject.Find("Audio_" + id);
+        go.GetComponent<AudioSource>().Stop();
+    }
 }
 public interface IaudioManager
 {
     void Play2D(string id);
     void Play3D(string id, Vector3 location);
+
+    void StopAudio(string id);
 
 }
