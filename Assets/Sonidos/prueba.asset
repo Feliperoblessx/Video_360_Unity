@@ -15,5 +15,5 @@ MonoBehaviour:
   id: Prueba
   clip: {fileID: 8300000, guid: 840dbdf8eae44f842ae574ca61b919fe, type: 3}
   volume: 1
-  loop: 0
+  loop: 1
   spatialBlend: 1
